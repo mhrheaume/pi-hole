@@ -11,6 +11,8 @@ services:
       TZ: "America/Los_Angeles"
       WEBPASSWORD: ${PIHOLE_PASSWORD}
       DNSMASQ_LISTENING: "all"
+      FTLCONF_RATE_LIMIT: "0/0"
+      FTLCONF_BLOCK_ICLOUD_PR: "false"
     volumes:
       - 'etc-pihole:/etc/pihole'
       - 'etc-dnsmasq.d:/etc/dnsmasq.d'

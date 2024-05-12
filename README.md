@@ -37,6 +37,19 @@ Replace `<user>` and `<ip>` with the user and IP of your Raspberry Pi.
 5. If everything works, you should be able to navigate to `http://<ip>/admin` and log into the
 Pi-hole dashboard using the password you configured in (3).
 
+## Updating
+
+To update the container, simply pull the updated images and re-create the container:
+
+```
+DOCKER_HOST="ssh://<user>@<ip>" docker compose pull
+DOCKER_HOST="ssh://<user>@<ip>" docker compose up --force-recreate --build -d
+
+# Optional cleanup
+DOCKER_HOST="ssh://<user>@<ip>" docker image prune -f
+
+```
+
 ## Resources
 
 [Tailscale: Access a Pi-hole from anywhere](https://tailscale.com/kb/1114/pi-hole)
